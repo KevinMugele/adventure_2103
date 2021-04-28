@@ -28,4 +28,6 @@ class Park
       level == trail.level
     end
   end
+
+  def 
 end

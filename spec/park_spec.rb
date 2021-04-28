@@ -88,4 +88,31 @@ describe Park do
       expect(park1.find_trails_by_level(:moderate)).to eq ([trail2, trail3])
     end
   end
+
+  describe '#trails by level' do
+    it 'returns hash with trail level as key and trails names as values' do
+      trail1 = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
+      trail2 = Trail.new({name: 'Cohab Canyon', length: '1.7 miles', level: :moderate})
+      trail3 = Trail.new({name: 'Chimney Rock Loop', length: '3.6 miles', level: :strenuous})
+      trail4 = Trail.new({name: "Queen's/Navajo Loop", length: '2.9 miles', level: :moderate})
+      trail5 = Trail.new({name: 'Rim Trail', length: '11 miles', level: :easy})
+      trail6 = Trail.new({name: 'Tower Bridge', length: '3 miles', level: :moderate})
+      park1 = Park.new('Capitol Reef')
+      park2 = Park.new('Bryce Canyon')
+
+      park1.add_trail(trail1)
+      park1.add_trail(trail2)
+      park1.add_trail(trail3)
+      park2.add_trail(trail4)
+      park2.add_trail(trail5)
+      park2.add_trail(trail6)
+      expected = {
+                  :easy => ["Grand Wash"],
+                  :moderate => ["Cohab Canyon"],
+                  :strenuous => ["Chimney Rock Loop"]}
+                  
+      expect(park1.trails_by_level).to eq expected
+    end
+  end
+
 end
