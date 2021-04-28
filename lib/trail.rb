@@ -5,8 +5,10 @@ class Trail
 
   def initialize(details)
     @name = details[:name]
-    @length = details[:length]
+    @length_str = details[:length]
     @level = details[:level]
   end
+
+  
 
 end
