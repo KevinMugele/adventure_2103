@@ -1,6 +1,6 @@
 class Trail
   attr_reader :name,
-              :length,
+              :length_str,
               :level
 
   def initialize(details)
@@ -9,6 +9,8 @@ class Trail
     @level = details[:level]
   end
 
-  
+  def length
+    @length_str.gsub('miles', '').to_f
+  end
 
 end
