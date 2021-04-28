@@ -48,7 +48,7 @@ describe Hiker do
     end
   end
 
-  describe '#trails_shorter_than' do
+  describe '#possible trails' do
     it 'returns all trails shorter than given length' do
       trail1 = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
       trail2 = Trail.new({name: 'Cohab Canyon', length: '1.7 miles', level: :moderate})
