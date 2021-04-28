@@ -35,7 +35,7 @@ describe Hiker do
     end
   end
 
-  describe '#visit park' do
+  describe '#vist' do
     it 'adds park to parks visited array' do
       hiker = Hiker.new('Dora', :moderate)
       park1 = Park.new('Capitol Reef')
@@ -43,7 +43,7 @@ describe Hiker do
 
       hiker.visit(park1)
       hiker.visit(park2)
-      
+
       expect(hiker.parks_visited).to eq ([park1, park2])
     end
   end

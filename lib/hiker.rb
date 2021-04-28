@@ -15,4 +15,8 @@ class Hiker
     return @snacks[snack] = amount if @snacks[snack].nil?
     @snacks[snack] += amount
   end
+
+  def visit(park)
+    @parks_visited << park
+  end
 end
