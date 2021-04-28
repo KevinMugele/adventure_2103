@@ -10,4 +10,10 @@ class Park
   def add_trail(trail)
     @trails << trail
   end
+
+  def find_shorter_trails(length)
+    @trails.find_all do |trail|
+      length > trail.length
+    end
+  end
 end

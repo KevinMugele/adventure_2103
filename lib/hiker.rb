@@ -20,5 +20,7 @@ class Hiker
     @parks_visited << park
   end
 
-  
+  def trails_shorter_than(length)
+
+  end
 end
