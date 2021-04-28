@@ -86,5 +86,4 @@ describe Hiker do
       expect(hiker.favorite_snack).to eq 'apple'
     end
   end
-
 end
