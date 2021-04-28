@@ -110,9 +110,15 @@ describe Park do
                   :easy => ["Grand Wash"],
                   :moderate => ["Cohab Canyon"],
                   :strenuous => ["Chimney Rock Loop"]}
-                  
+
       expect(park1.trails_by_level).to eq expected
+
+      expected = {
+                  :moderate => ["Queen's/Navajo Loop", "Tower Bridge"],
+                  :easy => ["Rim Trail"] }
+
+      expect(park2.trails_by_level).to eq expected 
     end
   end
-
+  
 end

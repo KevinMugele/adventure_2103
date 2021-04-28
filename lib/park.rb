@@ -29,5 +29,13 @@ class Park
     end
   end
 
-  def 
+  def trails_by_level
+    by_level = {}
+    @trails.each do |trail|
+      by_level[trail.level] = find_trails_by_level(trail.level).map do |trail|
+        trail.name
+      end
+    end
+    by_level
+  end
 end

@@ -45,6 +45,19 @@ describe Hiker do
       hiker.visit(park2)
 
       expect(hiker.parks_visited).to eq ([park1, park2])
+
+    end
+
+    it 'will not add the same park more than once' do
+      hiker = Hiker.new('Dora', :moderate)
+      park1 = Park.new('Capitol Reef')
+      park2 = Park.new('Bryce Canyon')
+
+      hiker.visit(park1)
+      hiker.visit(park2)
+      hiker.visit(park1)
+  
+      expect(hiker.parks_visited).to eq ([park1, park2])
     end
   end
 
