@@ -21,11 +21,9 @@ class Hiker
   end
 
   def possible_trails 
-    possible = []
-    @parks_visited.each do |park|
-      possible << park.find_trails_by_level(@experience_level)
+    possible = @parks_visited.flat_map do |park|
+      park.find_trails_by_level(@experience_level)
     end
-    possible.flatten
   end
 
   def favorite_snack

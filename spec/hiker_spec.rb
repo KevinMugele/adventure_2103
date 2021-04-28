@@ -99,4 +99,16 @@ describe Hiker do
       expect(hiker.favorite_snack).to eq 'apple'
     end
   end
+
+  describe '#visitor log' do
+    it 'contains date specific info on each hiker visit' do
+      hiker = Hiker.new('Dora', :moderate)
+      hiker.pack('water', 2)
+      hiker.pack('trail mix', 1)
+      hiker.pack('apple', 4)
+      hiker.pack('carrot', 3)
+
+      expect(hiker.favorite_snack).to eq 'apple'
+    end
+  end
 end
