@@ -71,8 +71,7 @@ describe Hiker do
       hiker.visit(park1)
       hiker.visit(park2)
 
-      expect(park1.trails_shorter_than(2.5)).to eq ([trail1, trail2])
-      expect(park2.trails_shorter_than(2.5)).to eq ([])
+      expect(hiker.possible_trails).to eq ([trail2, trail4, trail6])
     end
   end
 

@@ -22,4 +22,10 @@ class Park
       trail.length
     end
   end
+
+  def trails_by_level(level)
+    @trails.find_all do |trail|
+      level == trail.level
+    end
+  end
 end

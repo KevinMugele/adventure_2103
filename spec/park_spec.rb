@@ -73,4 +73,19 @@ describe Park do
     end
   end
 
+  describe '#trails_by_level' do
+    it 'returns trails by given level' do
+      park1 = Park.new('Capitol Reef')
+      trail1 = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
+      trail2 = Trail.new({name: 'Cohab Canyon', length: '1.7 miles', level: :moderate})
+      trail3 = Trail.new({name: 'Tower Bridge', length: '3.0 miles', level: :moderate})
+
+      park1.add_trail(trail1)
+      park1.add_trail(trail2)
+      park1.add_trail(trail3)
+
+      expect(park1.trails_by_level(:easy)).to eq ([trail1])
+      expect(park1.trails_by_level(:moderate)).to eq ([trail2, trail3])
+    end
+  end
 end
