@@ -12,5 +12,4 @@ class Trail
   def length
     @length_str.gsub('miles', '').to_f
   end
-
 end
