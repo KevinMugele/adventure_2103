@@ -11,9 +11,13 @@ class Park
     @trails << trail
   end
 
-  def find_shorter_trails(length)
+  def trails_shorter_than(length)
     @trails.find_all do |trail|
       length > trail.length
     end
+  end
+
+  def hikeable_miles 
+    
   end
 end

@@ -35,8 +35,8 @@ describe Park do
     end
   end
 
-  describe '#find_shorter_trails' do
-    it 'adds trail to trails array' do
+  describe '#trails_shorter_than' do
+    it 'returns trails that are shorter than given length' do
       park1 = Park.new('Capitol Reef')
       trail1 = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
       trail2 = Trail.new({name: 'Cohab Canyon', length: '1.7 miles', level: :moderate})
@@ -46,7 +46,29 @@ describe Park do
       park1.add_trail(trail2)
       park1.add_trail(trail3)
 
-      expect(park1.find_shorter_trails(2.5)).to eq ([trail1, trail2])
+      expect(park1.trails_shorter_than(2.5)).to eq ([trail1, trail2])
     end
   end
+
+  describe '#hikeable miles' do
+    trail1 = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
+    trail2 = Trail.new({name: 'Cohab Canyon', length: '1.7 miles', level: :moderate})
+    trail3 = Trail.new({name: 'Chimney Rock Loop', length: '3.6 miles', level: :strenuous})
+    trail4 = Trail.new({name: "Queen's/Navajo Loop", length: '2.9 miles', level: :moderate})
+    trail5 = Trail.new({name: 'Rim Trail', length: '11 miles', level: :easy})
+    trail6 = Trail.new({name: 'Tower Bridge', length: '3 miles', level: :moderate})
+    park1 = Park.new('Capitol Reef')
+    park2 = Park.new('Bryce Canyon')
+
+    park1.add_trail(trail1)
+    park1.add_trail(trail2)
+    park1.add_trail(trail3)
+    park2.add_trail(trail4)
+    park2.add_trail(trail5)
+    park2.add_trail(trail6)
+
+    expect(park1.hikeable_miles).to eq 7.5
+    expect(park2.hikeable_miles).to eq 16.9
+  end
+
 end

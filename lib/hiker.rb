@@ -20,7 +20,13 @@ class Hiker
     @parks_visited << park
   end
 
-  def trails_shorter_than(length)
-
-  end
+  # def trails_shorter_than(length)
+  #   shorter_trails = []
+  #   require 'pry'; binding.pry
+  #   @parks_visited.each do |park|
+  #     require 'pry'; binding.pry
+  #     shorter_trails << park.find_shorter_trails(length)
+  #   end
+  #   shorter_trails
+  # end 
 end
