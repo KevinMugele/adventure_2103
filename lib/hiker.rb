@@ -27,4 +27,8 @@ class Hiker
     end
     possible.flatten
   end
+
+  def favorite_snack
+    
+  end
 end

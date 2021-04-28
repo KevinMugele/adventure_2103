@@ -75,4 +75,16 @@ describe Hiker do
     end
   end
 
+  describe '#favorite snack' do
+    it 'returns snack the hiker packed most of' do
+      hiker = Hiker.new('Dora', :moderate)
+      hiker.pack('water', 2)
+      hiker.pack('trail mix', 1)
+      hiker.pack('apple', 4)
+      hiker.pack('carrot', 3)
+
+      expect(hiker.favorite_snack).to eq 'apple'
+    end
+  end
+
 end
