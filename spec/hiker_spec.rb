@@ -34,4 +34,17 @@ describe Hiker do
       expect(hiker.snacks).to eq ({"water"=>2, "trail mix"=>3})
     end
   end
+
+  describe '#visit park' do
+    it 'adds park to parks visited array' do
+      hiker = Hiker.new('Dora', :moderate)
+      park1 = Park.new('Capitol Reef')
+      park2 = Park.new('Bryce Canyon')
+
+      hiker.visit(park1)
+      hiker.visit(park2)
+      
+      expect(hiker.parks_visited).to eq ([park1, park2])
+    end
+  end
 end
