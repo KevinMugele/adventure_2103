@@ -1,15 +1,11 @@
+# frozen_string_literal: true
+
 class Trail
-  attr_reader :name,
-              :length_str,
-              :level
+  attr_reader :name, :length, :level
 
-  def initialize(details)
-    @name = details[:name]
-    @length_str = details[:length]
-    @level = details[:level]
-  end
-
-  def length
-    @length_str.gsub('miles', '').to_f
+  def initialize(attributes)
+    @name = attributes[:name]
+    @length = attributes[:length].delete('miles').to_f
+    @level = attributes[:level]
   end
 end
